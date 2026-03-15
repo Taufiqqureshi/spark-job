@@ -1,3 +1,5 @@
+>>Now go under github and update jenkins file with below code and commit on github itself
+
 pipeline {
     agent any
 
@@ -52,4 +54,3 @@ pipeline {
         }
     }
 }
-
