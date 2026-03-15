@@ -1,5 +1,3 @@
->>Now go under github and update jenkins file with below code and commit on github itself
-
 pipeline {
     agent any
 
@@ -37,13 +35,13 @@ pipeline {
     	success {
             script {
                 // Notify success to Slack
-                slackSend channel: '#spark-alerts', color: 'good', message: "Build SUCCESSFUL: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
+                slackSend channel: '#spark-job', color: 'good', message: "Build SUCCESSFUL: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
             }
         }
         failure {
             script {
                 // Notify failure to Slack
-                slackSend channel: '#spark-alerts', color: 'danger', message: "Build FAILED: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
+                slackSend channel: '#spark-job', color: 'danger', message: "Build FAILED: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
             }
         }
         always {
